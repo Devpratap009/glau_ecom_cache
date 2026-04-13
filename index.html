@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>QuickMart</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>QuickMart</h1>
+    <nav>
+      <span>Home</span>
+      <span>Products</span>
+      <span>Contact</span>
+    </nav>
+  </header>
+
+  <main>
+    <div class="cache-bar">
+      <div class="cache-banner" id="cacheBanner">Checking cache...</div>
+      <button class="clear-btn" id="clearBtn">Clear Cache</button>
+    </div>
+
+    <div class="products-header">
+      <h2>Products</h2>
+      <button class="add-btn" onclick="openModal()">
+        <span class="plus">+</span> Add Product
+      </button>
+    </div>
+
+    <div class="product-grid" id="productGrid">
+      <p>Loading...</p>
+    </div>
+  </main>
+
+  <div class="modal-overlay" id="addModal">
+    <div class="modal-box">
+      <h3>Add New Product</h3>
+      <form id="addForm">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="e.g. Wireless Headphones" required />
+        </div>
+        <div class="form-group">
+          <label for="price">Price (Rs.)</label>
+          <input id="price" name="price" type="number" min="0" placeholder="e.g. 1999" required />
+        </div>
+        <div class="form-group">
+          <label for="description">Description</label>
+          <input id="description" name="description" type="text" placeholder="Short product description" required />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <input id="category" name="category" type="text" placeholder="e.g. Electronics" />
+        </div>
+        <div class="form-group">
+          <label for="imageUrl">Image URL</label>
+          <input id="imageUrl" name="imageUrl" type="text" placeholder="https://..." />
+        </div>
+        <div class="form-group">
+          <label for="inStock">Availability</label>
+          <select id="inStock" name="inStock">
+            <option value="true">In Stock</option>
+            <option value="false">Out of Stock</option>
+          </select>
+        </div>
+        <div class="modal-actions">
+          <button type="submit" class="btn-submit">Add Product</button>
+          <button type="button" class="btn-cancel" onclick="closeModal()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 QuickMart. All rights reserved.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
